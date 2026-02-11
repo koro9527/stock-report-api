@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: stock-report-api
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: USE_SAMPLE_DATA
+        value: "true"
+      - key: PORT
+        value: "10000"
